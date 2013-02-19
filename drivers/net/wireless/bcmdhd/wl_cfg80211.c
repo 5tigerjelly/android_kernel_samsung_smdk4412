@@ -5947,7 +5947,7 @@ static s32 wl_setup_wiphy(struct wireless_dev *wdev, struct device *sdiofunc_dev
 	wdev->wiphy->max_scan_ssids = WL_SCAN_PARAMS_SSID_MAX;
 	wdev->wiphy->max_num_pmkids = WL_NUM_PMKIDS_MAX;
 	wdev->wiphy->interface_modes =
-		BIT(NL80211_IFTYPE_STATION)
+		BIT(NL80211_IFTYPE_STATION) | BIT(NL80211_IFTYPE_ADHOC)
 #if !(defined(WLP2P) && defined(WL_ENABLE_P2P_IF))
 		| BIT(NL80211_IFTYPE_MONITOR)
 #endif
